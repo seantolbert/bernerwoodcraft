@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Product } from '../types/Product'; // Adjust the import path as necessary
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
   product: Product;
@@ -10,7 +11,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="border rounded-md p-4 m-2">
-      <h2 className="text-lg font-bold">{product.name}</h2>
+      <Link to={`/products/${product.id}`} className="text-lg font-bold">{product.name}</Link>
       <p>{product.description}</p>
       <p>Price: ${product.price.toFixed(2)}</p>
       {/* Optionally display images if available */}
