@@ -1,22 +1,6 @@
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  materials: string[];
-  dimensions: {
-    length: number;
-    width: number;
-    height: number;
-  };
-  images: string[];
-  inStock: boolean;
-  createdAt: Date;
-  updatedAt?: Date;
-}
+import { Product } from "../types/Product";
 
-const cuttingBoards: Product[] = [
+export const cuttingBoards: Product[] = [
   {
     id: "cb001",
     name: "Classic Maple Cutting Board",

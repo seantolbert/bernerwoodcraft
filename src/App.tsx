@@ -13,6 +13,7 @@ import Layout from "./components/Layout";
 import LandingPage from "./pages/LandingPage";
 import BlogPage from "./pages/BlogPage";
 import AccountPage from "./pages/AccountPage";
+import AddProduct from "./pages/AddProduct";
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
           <Route path="/signup" element={<RegisterPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/account" element={<AccountPage />} />
-
+          <Route path="/addproduct" element={<AddProduct />} />
         </Routes>
       </Layout>
     </BrowserRouter>

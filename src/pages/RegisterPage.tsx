@@ -80,6 +80,19 @@ const RegisterPage = () => {
             />
           </div>
           <div>
+            <label htmlFor="phone-number" className="sr-only">
+              Phone Number
+            </label>
+            <input
+              type="password"
+              id="phone-number"
+              name="phoneNumber"
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Confirm Password"
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+          <div>
             <label htmlFor="confirm-password" className="sr-only">
               Confirm Password
             </label>
