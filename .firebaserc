@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "bernerwoodcraft"
-  }
+    "default": "bernerwoodcraft-70ac7",
+    "staging": "bernerwoodcraft-70ac7"
+  },
+  "targets": {},
+  "etags": {}
 }
