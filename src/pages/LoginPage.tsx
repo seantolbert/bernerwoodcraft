@@ -1,10 +1,11 @@
-// src/pages/LoginPage.tsx
-
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase"; // Adjust the path as necessary
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +16,7 @@ const LoginPage = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Redirect to home page or dashboard after successful login
+      navigate("/");
     } catch (error: any) {
       setError(error.message);
     }

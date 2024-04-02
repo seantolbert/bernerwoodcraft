@@ -12,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage";
 import Layout from "./components/Layout";
 import LandingPage from "./pages/LandingPage";
 import BlogPage from "./pages/BlogPage";
+import AccountPage from "./pages/AccountPage";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<RegisterPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/account" element={<AccountPage />} />
 
         </Routes>
       </Layout>

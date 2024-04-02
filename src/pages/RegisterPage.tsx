@@ -8,8 +8,10 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
   const [error, setError] = useState("");
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,7 +31,12 @@ const RegisterPage = () => {
       const user = userCredential.user;
 
       // create user pofile in fb database
-      
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        phoneNumber,
+        orderHistory: [],
+        // add additional fields as needed
+      });
 
       // Redirect to home page or dashboard after successful registration
       navigate("/");
