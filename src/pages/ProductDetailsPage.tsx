@@ -3,11 +3,21 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Product } from "../types/Product";
+import { useCart } from "../context/CartContext";
 
 const ProductDetailsPage: React.FC = () => {
+  const { addItem } = useCart();
+
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+
+const handleAddToCart = () => {
+  // define the product to add
+  const productToAdd = {
+    productId: 
+  }
+} 
 
   useEffect(() => {
     const fetchProduct = async () => {
