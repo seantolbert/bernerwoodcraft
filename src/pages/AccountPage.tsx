@@ -43,7 +43,7 @@ const AccountPage: React.FC = () => {
       <h1 className="text-2xl font-bold">Accout Details</h1>
       <p>Email: {userProfile.email}</p>
       <p>Phone Number: {userProfile.phoneNumber}</p>
-      {/* rener other info here as needed */}
+      {/* render other info here as needed */}
     </div>
   );
 };

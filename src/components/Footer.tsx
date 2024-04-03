@@ -21,7 +21,9 @@ function Footer() {
       <Link to="signup">Register</Link>
       <Link to="account">Account</Link>
       <Link to="products">Products</Link>
+      <Link to="cart">Cart</Link>
       <Link to="addproduct">Add Products</Link>
+      
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

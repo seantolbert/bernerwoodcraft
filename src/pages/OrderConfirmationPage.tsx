@@ -1,9 +1,5 @@
+const OrderConfirmationPage = () => {
+  return <div>OrderConfirmationPage</div>;
+};
 
-
-function OrderConfirmationPage() {
-  return (
-    <div>OrderConfirmationPage</div>
-  )
-}
-
-export default OrderConfirmationPage
+export default OrderConfirmationPage;

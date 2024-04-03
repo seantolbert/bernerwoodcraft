@@ -4,20 +4,13 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Product } from "../types/Product";
 import { useCart } from "../context/CartContext";
+import { Button } from "@/components/ui/button";
 
 const ProductDetailsPage: React.FC = () => {
-  const { addItem } = useCart();
-
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-
-const handleAddToCart = () => {
-  // define the product to add
-  const productToAdd = {
-    productId: 
-  }
-} 
+  const { addItem } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -37,6 +30,19 @@ const handleAddToCart = () => {
     };
     fetchProduct();
   }, [productId]);
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    // assuming there is a quantity addition thingy here
+    const itemToAdd = {
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1, // default to 1
+    };
+    addItem(itemToAdd);
+    alert(`${product.name} aded to cart`); // optional replace! 
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -74,6 +80,7 @@ const handleAddToCart = () => {
               className="max-h-40 object-cover"
             />
           ))}
+          <Button onClick={handleAddToCart}>Add To Cart</Button>
         </div>
       </div>
     </div>
