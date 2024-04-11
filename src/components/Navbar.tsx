@@ -1,7 +1,7 @@
 import logo from "../assets/Logo.svg";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { Button } from "./ui/button";
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
