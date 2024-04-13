@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { CartProvider } from "@/context/CartContext";
+import { CartProvider } from "@/hooks/useCart";
 
 interface LayoutProps {
   children: ReactNode;

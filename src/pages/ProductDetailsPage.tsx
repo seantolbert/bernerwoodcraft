@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Product } from "../types/Product";
-import { useCart } from "../context/CartContext";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/hooks/useCart";
 
 const ProductDetailsPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const { addItem } = useCart();
+  const {addToCart} = useCart()
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -40,8 +40,8 @@ const ProductDetailsPage: React.FC = () => {
       price: product.price,
       quantity: 1, // default to 1
     };
-    addItem(itemToAdd);
-    alert(`${product.name} aded to cart`); // optional replace! 
+    addToCart(itemToAdd);
+    alert(`${product.name} added to cart`); // optional replace!
   };
 
   if (loading) {

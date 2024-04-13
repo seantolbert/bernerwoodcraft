@@ -1,23 +1,23 @@
 // src/pages/CartPage.tsx
 
 import React from 'react';
-import { useCart } from '../context/CartContext'; // Adjust the import path as needed
+import { useCart } from '@/hooks/useCart';
 import CartItemCard from '../components/CartItemCard'; // Adjust the import path as needed
 
 const ShoppingCartPage: React.FC = () => {
-  const { items, clearCart } = useCart();
+  const { cartItems, clearCart } = useCart();
 
   const calculateTotal = (): number => {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   return (
     <div className="max-w-3xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
-      {items.length > 0 ? (
+      {cartItems.length > 0 ? (
         <>
           <div>
-            {items.map((item) => (
+            {cartItems.map((item) => (
               <CartItemCard key={item.productId} item={item} />
             ))}
           </div>

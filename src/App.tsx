@@ -14,35 +14,29 @@ import LandingPage from "./pages/LandingPage";
 import BlogPage from "./pages/BlogPage";
 import AccountPage from "./pages/AccountPage";
 import AddProduct from "./pages/AddProduct";
-import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/landing" element={<LandingPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route
-              path="/products/:productId"
-              element={<ProductDetailsPage />}
-            />
-            <Route path="/cart" element={<ShoppingCartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/confirmation" element={<OrderConfirmationPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<RegisterPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/account" element={<AccountPage />} />
-            <Route path="/addproduct" element={<AddProduct />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </CartProvider>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:productId" element={<ProductDetailsPage />} />
+          <Route path="/cart" element={<ShoppingCartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<OrderConfirmationPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<RegisterPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
