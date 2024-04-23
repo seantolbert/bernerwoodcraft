@@ -1,9 +1,11 @@
-
+import Woodshop from "../assets/images/woodshop.webp";
 
 function HeroSection() {
   return (
-    <div>HeroSection</div>
-  )
+    <div>
+      <img src={Woodshop} alt="" className="w-full" />
+    </div>
+  );
 }
 
-export default HeroSection
+export default HeroSection;

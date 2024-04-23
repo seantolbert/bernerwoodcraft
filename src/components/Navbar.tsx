@@ -1,44 +1,17 @@
 import logo from "../assets/Logo.svg";
-import { useState } from "react";
-import { FiMenu } from "react-icons/fi";
-
+import { Input } from "./ui/input";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="bg-wood-pattern bg-cover bg-no-repeat bg-center p-4">
-      {/* Container to center content and padding */}
-      <div className="container mx-auto flex items-center justify-between md:justify-center">
-        {/* Logo - hidden on mobile, shown on desktop */}
-        <div className="hidden md:flex md:items-center md:flex-shrink-0">
-          <img src={logo} alt="Berner Woodcraft Logo" className="h-8" />
-          <span className="text-white font-montserrat-bold">
-            Berner Woodcraft
-          </span>
-        </div>
-
-        {/* Navigation links - adjust this part based on your navigation setup */}
-        {/* ... */}
-
-        {/* Logo - shown on mobile, hidden on desktop */}
-        <div className="flex justify-between md:hidden w-full">
-          <div className="flex items-center">
-            <img src={logo} alt="Berner Woodcraft Logo" className="h-8" />
-            <span className="text-white font-montserrat-bold">
-              Berner Woodcraft
-            </span>
-          </div>
-          <button onClick={() => setIsMenuOpen(isMenuOpen)}>
-            <FiMenu className="text-white text-3xl" />
-          </button>
-        </div>
-
-        {/* mobile menu button */}
-        
-
-        {/* Other elements like menu button for mobile */}
-        {/* ... */}
+    <nav className="bg-wood-pattern bg-cover flex items-center flex-col justify-center">
+      <div className="flex flex-col justify-center items-center text-white">
+        <img src={logo} alt="Berner Woodcraft Logo" className="h-20" />
+        <span className="text-5xl font-bold">BERNER</span>
+        <span className="tracking-widest">WOODCRAFT</span>
       </div>
+      {/* search */}
+      {/* lower section */}
+<div className="h-16 bg-amber-950 w-full"></div>
     </nav>
   );
 };
