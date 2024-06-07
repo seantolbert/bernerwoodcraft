@@ -1,9 +1,14 @@
-import Woodshop from "../assets/images/woodshop.webp";
+import Woodshop from "../assets/images/woodbackground.webp";
 
 function HeroSection() {
   return (
-    <div>
-      <img src={Woodshop} alt="" className="w-full" />
+    <div className="">
+      <img
+        src={Woodshop}
+        alt=""
+        className="bg-gradient-to-t from-transparent to-black"
+      />
+      {/* <div className=" w-full h-full " /> */}
     </div>
   );
 }
